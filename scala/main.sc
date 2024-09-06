@@ -1,8 +1,8 @@
 //> using dep com.lihaoyi::os-lib:0.10.5
 //> using dep com.lihaoyi::upickle:4.0.1
 //> using dep com.lihaoyi::scalatags:0.13.1
-import scalatags.Text.TypedTag
 
+import scalatags.Text.TypedTag
 import ujson.Value
 import scalatags.Text.all._
 
