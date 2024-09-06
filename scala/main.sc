@@ -45,4 +45,4 @@ val xmlEntries = json.arr.toList
   .filter(e => !exclude.contains(e("url").str))
   .map(jsonEntryToXmlEntry)
 
-println(makeFeed(xmlEntries))
+os.write.over(os.pwd / "atom.xml", makeFeed(xmlEntries))
