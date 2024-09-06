@@ -7,6 +7,7 @@ import ujson.Value
 import scalatags.Text.all._
 
 var baseUrl = "https://bhoot.dev"
+
 val exclude = List(
   "/about"
 )
