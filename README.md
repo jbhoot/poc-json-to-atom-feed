@@ -4,11 +4,14 @@
 - as a corollary to above, inline management of any dependencies
 - statically typed
 - functional paradigm
-- low memory usage
-- low startup time
-- high performance
-- fast feedback loop - built-in watcher, fast whole or incremental compilation
-- IDE support
+- performance
+  - memory usage
+  - startup time
+  - execution time
+- developer experience, development speed
+  - bootstrapping
+  - editing support
+  - fast feedback loop - built-in watcher, fast whole or incremental compilation
 
 ## Scala
 
