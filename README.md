@@ -1,5 +1,12 @@
+## Operations required from ecosystem
+
+- OS operations to read and write files
+- JSON parser to read blog index
+- XML parser to create Atom feed
+
 ## Criteria
 
+- does the stdlib provide the operations I need?
 - single-file script
 - as a corollary to above, inline management of any dependencies
 - statically typed
@@ -12,6 +19,8 @@
   - bootstrapping
   - editing support
   - fast feedback loop - built-in watcher, fast whole or incremental compilation
+
+`time` results are from the "first" run, i.e., respective compilers/interpreters didn't get a chance to optimise the execution.
 
 ## Scala
 
@@ -34,13 +43,26 @@ Official Scala docs already had recommende libraries for this task - os-lib, uPi
 `scala run -w main.sc`
 
 ```
+bash | ~/projects/json-to-atom-feed/scala
 $ time scala main.sc
-real    0m0.529s
-user    0m0.306s
-sys     0m0.061s
+Compiling project (Scala 3.5.0, JVM (21))
+Compiled project (Scala 3.5.0, JVM (21))
+
+real    0m1.882s
+user    0m0.454s
+sys     0m0.115s
+
+bash | ~/projects/json-to-atom-feed/scala
+$ time scala main.sc
+
+real    0m0.532s
+user    0m0.313s
+sys     0m0.063s
 ```
 
 ## OCaml
+
+Running in interpreter mode
 
 Pre-requisites (to keep things local):
 - opam
@@ -61,6 +83,22 @@ Dependencies cannot be inlined in the sense of how it works in Scala. Sure, `dun
 LSP does not recognise #use #require directives and marks them as syntax errors. But otherwise, the LSP does its job. Actually no, not much help from IDE for complex types. ocaml-lsp needs a project to be build with dune. So, if I need IDE assistance, then say bye bye to single-file script. We need a dune file apart from the script file.
 
 `$ ls main.ml | entr -s 'ocaml main.ml'`
+
+
+```
+$ time ocaml main.ml
+
+real    0m0.137s
+user    0m0.096s
+sys     0m0.015s
+
+
+$ time ocaml main.ml
+
+real    0m0.118s
+user    0m0.104s
+sys     0m0.012s
+```
 
 Other options:
 
