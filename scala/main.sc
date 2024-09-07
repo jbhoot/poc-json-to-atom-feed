@@ -12,22 +12,36 @@ val exclude = List(
   "/about"
 )
 
+case class Entry(
+    id: String,
+    title: String,
+    link: String,
+    published: String,
+    summary: String,
+    authorName: String
+)
+
 val json = ujson.read(os.read(os.pwd / os.up / "input.json"))
 
-val jsonEntryToXmlEntry = (e: Value) => {
-  val id = e("id").str
-  val title = e("title").str
-  val link = baseUrl ++ e("url").str
-  val published = e("timestamp").str
-  val summary = e("excerpt").str
-  val authorName = e("author_name").str
+val parseFromJson = (e: Value) => {
+  Entry(
+    id = e("id").str,
+    title = e("title").str,
+    link = baseUrl ++ e("url").str,
+    published = e("timestamp").str,
+    summary = e("excerpt").str,
+    authorName = e("author_name").str
+  )
+}
+
+val toXmlEntry = (e: Entry) => {
   tag("entry")(
-    tag("id")(id),
-    tag("title")(title),
-    tag("link")(href := link),
-    tag("published")(published),
-    tag("summary")(summary),
-    tag("author")(tag("name")(authorName))
+    tag("id")(e.id),
+    tag("title")(e.title),
+    tag("link")(href := e.link),
+    tag("published")(e.published),
+    tag("summary")(e.summary),
+    tag("author")(tag("name")(e.authorName))
   )
 }
 
@@ -43,6 +57,7 @@ val makeFeed = (entries: List[TypedTag[String]]) => {
 
 val xmlEntries = json.arr.toList
   .filter(e => !exclude.contains(e("url").str))
-  .map(jsonEntryToXmlEntry)
+  .map(parseFromJson)
+  .map(toXmlEntry)
 
 os.write.over(os.pwd / "atom.xml", makeFeed(xmlEntries))
