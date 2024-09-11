@@ -78,7 +78,6 @@ func main() {
 			xmlEntries = append(xmlEntries, e.toXmlEntry())
 		}
 	}
-	fmt.Println(len(jsonEntries), len(xmlEntries))
 
 	var feed = Feed{
 		XmlNs: "http://www.w3.org/2005/Atom",
@@ -90,4 +89,6 @@ func main() {
 	cantErr(err)
 	xmlDoc := slices.Concat([]byte(xml.Header), xmlB)
 	os.WriteFile("atom-go.xml", xmlDoc, 0666)
+
+	fmt.Println("Done")
 }
