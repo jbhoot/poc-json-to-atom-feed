@@ -140,6 +140,24 @@ Producing an indented XML is as easy as specifying another argument in the `Mars
 
 ### Conclusion
 
+```
+bash | ~/projects/json-to-atom-feed
+$ time go run go/main.go
+Done
+
+real	0m1.111s
+user	0m0.120s
+sys	0m0.163s
+
+bash | ~/projects/json-to-atom-feed
+$ time go run go/main.go
+Done
+
+real	0m0.203s
+user	0m0.144s
+sys	0m0.139s 
+```
+
 I will say this: Go's abstractions felt too low-level for the kind of tasks it is advertised for.
 
 Over all, golang excels at everything - rich stdlib, build tooling, editor tooling, single binary distribution and deployment, fast compilation - *EXCEPT* the *lang* part.
