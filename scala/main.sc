@@ -1,4 +1,4 @@
-//> using dep com.lihaoyi::os-lib:0.10.5
+//> using dep com.lihaoyi::os-lib:0.10.7
 //> using dep com.lihaoyi::upickle:4.0.1
 //> using dep com.lihaoyi::scalatags:0.13.1
 
@@ -21,7 +21,7 @@ case class Entry(
     authorName: String
 )
 
-val json = ujson.read(os.read(os.pwd / os.up / "input.json"))
+val json = ujson.read(os.read(os.pwd / "input.json"))
 
 val parseFromJson = (e: Value) => {
   Entry(
@@ -60,4 +60,4 @@ val xmlEntries = json.arr.toList
   .map(parseFromJson)
   .map(toXmlEntry)
 
-os.write.over(os.pwd / "atom.xml", makeFeed(xmlEntries))
+os.write.over(os.pwd / "atom-scala.xml", makeFeed(xmlEntries))
