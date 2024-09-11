@@ -9,6 +9,12 @@ import (
 	"slices"
 )
 
+func cantErr(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
+
 var Exclude = []string{"/about"}
 
 type JsonEntry struct {
@@ -41,12 +47,6 @@ type Feed struct {
 	Title   string     `xml:"title"`
 	Link    Link       `xml:"link"`
 	Entry   []XmlEntry `xml:"entry"`
-}
-
-func cantErr(e error) {
-	if e != nil {
-		panic(e)
-	}
 }
 
 func (e JsonEntry) toXmlEntry() XmlEntry {
