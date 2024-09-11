@@ -64,8 +64,6 @@ func main() {
 	dir, err := os.Getwd()
 	cantErr(err)
 	var inputFile = filepath.Join(dir, "input.json")
-	// var parentDir = filepath.Dir(dir)
-	// var inputFile = filepath.Join(parentDir, "input.json")
 
 	b, err := os.ReadFile(inputFile)
 	cantErr(err)
