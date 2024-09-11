@@ -40,7 +40,7 @@ The feedback loop driven development was very enjoyable.
 
 Official Scala docs already had recommende libraries for this task - os-lib, uPickle. I add another - Scalatags. Thanks to Scala 3.5.0's inline dependency management for single-file scripts, dep management was next to nothing.
 
-`scala run -w main.sc`
+Dev command: `scala run -w main.sc`
 
 ```
 bash | ~/projects/json-to-atom-feed/scala
