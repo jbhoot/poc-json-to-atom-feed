@@ -44,7 +44,7 @@ The feedback loop driven development was very enjoyable.
 
 Official Scala docs already had recommende libraries for this task - os-lib, uPickle. I add another - Scalatags. Thanks to Scala 3.5.0's inline dependency management for single-file scripts, dep management was next to nothing.
 
-`scala run -w main.sc`
+Dev command: `scala run -w main.sc`
 
 ```
 bash | ~/projects/json-to-atom-feed/scala
@@ -95,7 +95,7 @@ Dependencies cannot be inlined in the sense of how it works in Scala. Sure, `dun
 
 LSP does not recognise #use #require directives and marks them as syntax errors. But otherwise, the LSP does its job. Actually no, not much help from IDE for complex types. ocaml-lsp needs a project to be build with dune. So, if I need IDE assistance, then say bye bye to single-file script. We need a dune file apart from the script file.
 
-`$ ls main.ml | entr -s 'ocaml main.ml'`
+Dev command: `$ ls main.ml | entr -s 'ocaml main.ml'`
 
 ```
 $ time ocaml main.ml
@@ -133,6 +133,8 @@ I have to say, though, while its problems also exist in other languages, for a r
 On the other hand, the printers (e.g., `fmt.Println`) are cool.
 
 ### Implementation log
+
+Dev command: `$ ls go/main.go | entr -s 'go run go/main.go'`
 
 No packages to install! Golang's stdlib has all I need - os, file path, json, xml operations. And neatly organised too! `Getwd()` to get current working directory is rightly inside `os` package, while `Join()` to join paths is rightly resides in `path/filepath`.
 
