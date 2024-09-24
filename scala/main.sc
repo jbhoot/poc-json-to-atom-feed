@@ -5,6 +5,7 @@
 import scalatags.Text.TypedTag
 import ujson.Value
 import scalatags.Text.all._
+import java.time.Instant
 
 var baseUrl = "https://bhoot.dev"
 
@@ -15,49 +16,71 @@ val exclude = List(
 case class Entry(
     id: String,
     title: String,
-    link: String,
-    published: String,
-    summary: String,
-    authorName: String
+    updated: Instant,
+    author_name: String,
+    content: String,
+    url: String,
+    excerpt: String,
+    collections: List[String],
+    published: Instant
 )
 
-val json = ujson.read(os.read(os.pwd / "input.json"))
+val parseFromJson = (e: ujson.Value) => {
+  val published = Instant.parse(e("published").str)
+  val updated = e("updated").strOpt match
+    case Some(updated) => Instant.parse(updated)
+    case None          => published
 
-val parseFromJson = (e: Value) => {
   Entry(
     id = e("id").str,
     title = e("title").str,
-    link = baseUrl ++ e("url").str,
-    published = e("timestamp").str,
-    summary = e("excerpt").str,
-    authorName = e("author_name").str
+    updated,
+    author_name = e("author_name").str,
+    content = e("content").str,
+    url = baseUrl ++ e("url").str,
+    excerpt = e("excerpt").str,
+    collections = e("collections").arr.toList.map(v => v.str),
+    published
   )
 }
 
 val toXmlEntry = (e: Entry) => {
+  val collections =
+    e.collections.map(t =>
+      tag("category")(attr("term") := t, attr("label") := t)
+    )
   tag("entry")(
     tag("id")(e.id),
-    tag("title")(e.title),
-    tag("link")(href := e.link),
-    tag("published")(e.published),
-    tag("summary")(e.summary),
-    tag("author")(tag("name")(e.authorName))
+    tag("title")(`type` := "html", e.title),
+    tag("updated")(e.updated.toString()),
+    tag("author")(tag("name")(e.author_name)),
+    tag("content")(`type` := "html", e.content),
+    link(href := e.url),
+    tag("summary")(`type` := "html", e.excerpt),
+    collections,
+    tag("published")(e.published.toString())
   )
 }
 
-val makeFeed = (entries: List[TypedTag[String]]) => {
+val makeFeed = (entries: List[Entry]) => {
+  val latestModifiedEntry = entries.maxBy(e => e.updated)
+  val xmlEntries = entries.map(toXmlEntry)
   val body = tag("feed")(
     xmlns := "http://www.w3.org/2005/Atom",
-    tag("title")("All articles"),
-    tag("link")(href := "https://bhoot.dev/articles"),
+    tag("id")(baseUrl ++ "/"),
+    tag("title")("Jayesh Bhoot's Ghost Town – All Posts"),
+    tag("updated")(latestModifiedEntry.updated.toString()),
+    tag("author")(tag("name")("Jayesh Bhoot")),
+    link(href := baseUrl ++ "/feed.xml", rel := "self"),
     xmlEntries
   )
   """<?xml version="1.0" encoding="utf-8"?>""" ++ body.render
 }
 
-val xmlEntries = json.arr.toList
+val json = ujson.read(os.read(os.pwd / "input.json"))
+
+val entries = json.arr.toList
   .filter(e => !exclude.contains(e("url").str))
   .map(parseFromJson)
-  .map(toXmlEntry)
 
-os.write.over(os.pwd / "atom-scala.xml", makeFeed(xmlEntries))
+os.write.over(os.pwd / "atom-scala.xml", makeFeed(entries))
