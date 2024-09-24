@@ -1,3 +1,7 @@
+In writing the Atom feed generators, I referred to the concise [Atom standard document provided by the W3C feed validation service](https://validator.w3.org/feed/check.cgi). 
+
+The generated Atom feed is validated with the [W3C feed validation service](https://validator.w3.org/feed/check.cgi).
+
 ## Operations required from ecosystem
 
 - OS operations to read and write files
@@ -62,13 +66,18 @@ sys     0m0.063s
 
 Scala CLI also informs if a dependency is out-of-date.
 
+### Implementation log
+
+F***ing `java.lang.NullPointerException`! And the world, instead of converging on a null-less programming language, has doubled down on `nil`s.
+
 ## OCaml
 
-OCaml comes with both a compiler *and* an interpreter. Pretty nifty, right? Except that there is no dependency management for a script intended to be run with the interpreter.
+OCaml comes with both a compiler _and_ an interpreter. Pretty nifty, right? Except that there is no dependency management for a script intended to be run with the interpreter.
 
 I chose to use the interpreter mode anyway.
 
 Pre-requisites (to keep things local):
+
 - opam
 - opam local switch to keep things local
 - opam install ocamlfind
@@ -87,7 +96,6 @@ Dependencies cannot be inlined in the sense of how it works in Scala. Sure, `dun
 LSP does not recognise #use #require directives and marks them as syntax errors. But otherwise, the LSP does its job. Actually no, not much help from IDE for complex types. ocaml-lsp needs a project to be build with dune. So, if I need IDE assistance, then say bye bye to single-file script. We need a dune file apart from the script file.
 
 `$ ls main.ml | entr -s 'ocaml main.ml'`
-
 
 ```
 $ time ocaml main.ml
@@ -122,21 +130,25 @@ And inconsistent too, in my eyes. For example, `func add(x, y int, z string)` is
 
 I have to say, though, while its problems also exist in other languages, for a relatively modern language, these problems should not have existed in Go. For example, the lack of distinction between value receiver and pointer receiver of a method at a call-site is basically a ticking time bomb in a codebase. Heck, that part of the Go tour slowed my pace to a crawl. I may be over-reacting. All of these may be beginner niggles, to be gotten used to over the course of time.
 
-On the other hand, the printers (e.g., `fmt.Println`) are cool. 
+On the other hand, the printers (e.g., `fmt.Println`) are cool.
 
 ### Implementation log
 
 No packages to install! Golang's stdlib has all I need - os, file path, json, xml operations. And neatly organised too! `Getwd()` to get current working directory is rightly inside `os` package, while `Join()` to join paths is rightly resides in `path/filepath`.
 
-Just got bit by the lowercase-as-private field convention right away. The fields in JSON file are of course all in lowercase. `Unmarshal()`, without any error, successfully produces empty structs. I had to Google to find out the JSON tag syntax.
+Just wasted 10 minutes thanks to the lowercase-as-private field convention right away. The fields in JSON file are, of course, all in lowercase. So, that's how I named the corresponding fields in Go's struct. `Unmarshal()`, _without any error_, successfully produces empty structs. Now I understand why an explicit _export_ keyword is way better than this implicit convention. A bit of experience with Go code should alleviate this problem though.
 
-Tagging Go struct with xml attributes looks more work than its counterpart in Scala. The tagging approach also doesn't reveal the actual heirarchy of the XML document visually. Both OCaml and Scala have better (admittedly, non-stdlib) tools for that.
+Tagging Go struct with xml attributes was more work than its counterpart in Scala. The tagging approach also doesn't reveal the actual heirarchy of the XML document visually. Both OCaml and Scala have better (admittedly, non-stdlib) tools for that.
+
+Also, the strongly-typed function-based approach to building XML document in OCaml and Scala trumps the stringly-typed tag-based approach to the same in Go, where I spent 10 minutes to figure out why I wasn't getting the tag structure I wanted.
 
 I had to create two structs to represent an Entry - one for JSON, another for XML. Unlike Scala and OCaml, I couldn't find a way to reconcile the fact, within a single datatype, that an entry's url resides at top-level in JSON structure, and as an attribute in a tag `<link href=""></link>` in XML structure.
 
 I don't really mind the OOP-like `x.method` syntax. I think its the lack of this syntax in OCaml that it has to end up using a bulkier `|>` pipe syntax. For example, moonbitlang, despite not being an OOP language, uses a `.` based syntax.
 
 Producing an indented XML is as easy as specifying another argument in the `Marshal()` function! I didn't find one in OCaml and Scala readily.
+
+Incorrect xml tags failed silently. For example, `xml:author>name` should have been `xml:"author>name"`. I felt a warning was warranted at least.
 
 ### Conclusion
 
@@ -155,11 +167,19 @@ Done
 
 real	0m0.203s
 user	0m0.144s
-sys	0m0.139s 
+sys	0m0.139s
 ```
 
 I will say this: Go's abstractions felt too low-level for the kind of tasks it is advertised for.
 
-Over all, golang excels at everything - rich stdlib, build tooling, editor tooling, single binary distribution and deployment, fast compilation - *EXCEPT* the *lang* part.
+Over all, golang excels at everything - rich stdlib, build tooling, editor tooling, single binary distribution and deployment, fast compilation - _EXCEPT_ the _lang_ part.
 
-OCaml provides much higher-level abstractions than Go with similar performance and resource consumption profile. So its not like Go is able to be so lean because of its low-level abstractions. OCaml lags very much behind in stdlib and build tooling than Go though.  
+OCaml provides much higher-level abstractions than Go with similar performance and resource consumption profile. So its not like Go is able to be so lean because of its low-level abstractions. OCaml lags very much behind in stdlib and build tooling than Go though.
+
+## Rust
+
+There is a [nightly feature](https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script) that allows cargo to run single-file scripts. It needs nightly toolchain `rustup toolchain install nightly`.
+
+Command: `cargo +nightly -Zscript script.rs`
+
+Dependencies, or cargo manifest, can be embedded right at the top of the "script".
