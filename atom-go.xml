@@ -3,10 +3,100 @@
   <title>All articles</title>
   <link href="https://bhoot.dev/articles"></link>
   <entry>
+    <id>urn:uuid:05744722-6bac-4385-b50b-1aa0a802eb53</id>
+    <title>Ki modal editor - first impressions</title>
+    <link href="/2024/ki-first-impressions"></link>
+    <published></published>
+    <summary>I tried out a new modal editor called &lt;i&gt;Ki&lt;/i&gt;, and inevitably measured my first impressions with Vim and Helix.</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:472b7fe6-d06b-428d-91c0-e931e953b421</id>
+    <title>Copy-pasting my comment in a converstion on lobste.rs titled &lt;a href=&#34;https://lobste.rs/s/gery1i/undeniable_utility_css_has#c_unpyso&#34;&gt;The Undeniable Utility Of CSS :has&lt;/a&gt;:</title>
+    <link href="/2024/has-selector-for-toc"></link>
+    <published></published>
+    <summary>Copy-pasting my comment in a converstion on lobste.rs titled &lt;a href=&#34;https://lobste.rs/s/gery1i/undeniable_utility_css_has#c_unpyso&#34;&gt;The Undeniable Utility Of CSS :has&lt;/a&gt;:</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:de433593-ba30-4de1-8f3b-588a8eb8c460</id>
+    <title>Moved my years old OCaml projects to the new workflow with the&#xA;      &lt;a href=&#34;https://dune.ci.dev&#34;&gt;nightly dune dev edition&lt;/a&gt;). I had to fill&#xA;      up the barebones &lt;code&gt;dune-project&lt;/code&gt; file with dependencies in one&#xA;      of the projects. Otherwise, everything worked without a hitch!</title>
+    <link href="/2024/old-camls-to-new-dune"></link>
+    <published></published>
+    <summary>Moved my years old OCaml projects to the new workflow with the&#xA;      &lt;a href=&#34;https://dune.ci.dev&#34;&gt;nightly dune dev edition&lt;/a&gt;). I had to fill&#xA;      up the barebones &lt;code&gt;dune-project&lt;/code&gt; file with dependencies in one&#xA;      of the projects. Otherwise, everything worked without a hitch!</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:9feafff8-9e1f-4306-a081-2b762cd6244f</id>
+    <title>I had ordered 4 journal diaries. Even though they came in a lot, this is how each of them were packaged as:</title>
+    <link href="/2024/forest-in-plastic"></link>
+    <published></published>
+    <summary>I had ordered 4 journal diaries. Even though they came in a lot, this is how each of them were packaged as:</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:b2e08fa4-8283-4044-a5ed-84a1531faf94</id>
+    <title>Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.</title>
+    <link href="/2024/no-script-in-innerhtml"></link>
+    <published></published>
+    <summary>Forgotten lesson remembered after staring 5 minutes at the screen: &lt;code&gt;innerHTML&lt;/code&gt; cannot contain a &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag.</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:06da33f8-2f18-431a-99f2-d2085e8a8702</id>
+    <title>Choosing curious over judgmental</title>
+    <link href="/2024/curiosity-over-judgement"></link>
+    <published></published>
+    <summary>I don&#39;t know about the cat, but curiosity certainly killed the judgmental!</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:214c8527-7318-4c6c-ae37-05765bdc353d</id>
+    <title>Cool ways to generate a UUID</title>
+    <link href="/2024/cool-ways-to-get-uuid"></link>
+    <published></published>
+    <summary>OK, may be not cool enough for Linux veterans, but cool enough for me!</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:c10c93ba-45e0-4f6f-b556-b0988ef852a3</id>
+    <title>Scala 3.5&#39;s CLI now makes scripting with scala seamless! Just a single-file script setup!</title>
+    <link href="/2024/scala-3_5-scripting"></link>
+    <published></published>
+    <summary>Scala 3.5&#39;s CLI now makes scripting with scala seamless! Just a single-file script setup!</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
+    <id>urn:uuid:cb0478f2-de68-414b-b6c3-023ef44c13dc</id>
+    <title></title>
+    <link href="/2024/task-failed-successfully-linux-edition"></link>
+    <published></published>
+    <summary></summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+  <entry>
     <id>urn:uuid:4a3058d8-0c53-4aaa-ad99-daf4254eac48</id>
     <title>British v/s American comedy dramas</title>
     <link href="/2024/british-vs-american-comedy-drama"></link>
-    <published>2024-07-07</published>
+    <published></published>
     <summary>They always felt different from each other, but I could never quite put a finger on the difference.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -14,9 +104,9 @@
   </entry>
   <entry>
     <id>urn:uuid:9905f662-e652-4747-949b-37c1112e1bad</id>
-    <title>Stubborn pop-up in &lt;i&gt;New Folio&lt;/i&gt; workflow on &lt;i&gt;Mutual Fund Utilities (MFU)&lt;/i&gt; website</title>
+    <title>Stubborn pop-up on &lt;i&gt;Mutual Fund Utilities (MFU)&lt;/i&gt; website</title>
     <link href="/2024/mfu-nominee-verification"></link>
-    <published>2024-06-23</published>
+    <published></published>
     <summary>Tip for Mutual Fund Utilities (MFU) users:</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -26,8 +116,8 @@
     <id>urn:uuid:b1319873-65a5-49e3-82aa-334e3fb7e353</id>
     <title>Effective Scala, part 8 - OO concepts</title>
     <link href="/2024/effective-scala-8-oop"></link>
-    <published>2024-05-14</published>
-    <summary>Flip the perspective on tools like interfaces and traits. Don’t see them as a way for objects to share an interface, but as an abstraction over implementations.</summary>
+    <published></published>
+    <summary>Flip the perspective on tools like interfaces and traits. Don&#39;t see them as a way for objects to share an interface, but as an abstraction over implementations.</summary>
     <author>
       <name>Jayesh Bhoot</name>
     </author>
@@ -36,8 +126,8 @@
     <id>urn:uuid:5a99b823-fa04-4e97-b94f-a0e57f0f879a</id>
     <title>Series - Effective Programming in Scala</title>
     <link href="/2024/effective-scala-series"></link>
-    <published>2024-05-08</published>
-    <summary>This is a series of blog posts I wrote while going through the Coursera Course &lt;a href=&#34;https://www.coursera.org/learn/effective-scala&#34;&gt;Effective Programming in Scala&lt;/a&gt;.</summary>
+    <published></published>
+    <summary>This is a series of articles I wrote while going through the Coursera Course &lt;a href=&#34;https://www.coursera.org/learn/effective-scala&#34;&gt;Effective Programming in Scala&lt;/a&gt;.</summary>
     <author>
       <name>Jayesh Bhoot</name>
     </author>
@@ -46,7 +136,7 @@
     <id>urn:uuid:3194d9ee-2397-4b1a-ba7a-125dbe10fb30</id>
     <title>Effective Scala, part 7 - entry point of a project</title>
     <link href="/2024/effective-scala-7-project-entry-point"></link>
-    <published>2024-05-07</published>
+    <published></published>
     <summary>While a scala worksheet are evaluated from top to bottom, a scala project needs an entry point.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -56,7 +146,7 @@
     <id>urn:uuid:b84ce392-affe-484b-a5eb-fde46cdd0ad8</id>
     <title>Effective Scala, part 6 - Scala Build Tool (SBT)</title>
     <link href="/2024/effective-scala-6-sbt"></link>
-    <published>2024-05-06</published>
+    <published></published>
     <summary>&lt;code&gt;src/project&lt;/code&gt; dir contains configuration about SBT - &lt;code&gt;build.properties&lt;/code&gt; to specify sbt version, &lt;code&gt;plugins.sbt&lt;/code&gt; to specify sbt plugins, and so on.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -66,7 +156,7 @@
     <id>urn:uuid:b62ea789-d0e9-4e7f-9b0e-40d17322bef7</id>
     <title>Effective Scala, part 5 - collections</title>
     <link href="/2024/effective-scala-5-collections"></link>
-    <published>2024-04-24</published>
+    <published></published>
     <summary>Operations on collections can be classified into:</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -76,7 +166,7 @@
     <id>urn:uuid:af3fbc76-728b-45ac-9c02-886b7aa2db68</id>
     <title>Effective Scala, part 4 - function v/s method</title>
     <link href="/2024/effective-scala-4-method-vs-function"></link>
-    <published>2024-04-21</published>
+    <published></published>
     <summary>A function is a value in Scala, while a method is not. So the former can be passed as a parameter of a function or a method, and can be returned as a value. Method cannot do any of those.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -86,7 +176,7 @@
     <id>urn:uuid:63a0e01e-eacb-486e-9f72-959cc2ccb742</id>
     <title>Effective Scala, part 3 - compatibility roulette</title>
     <link href="/2024/effective-scala-3-compatibility-roulette"></link>
-    <published>2024-04-19</published>
+    <published></published>
     <summary>I am going through the course &lt;a href=&#34;https://www.coursera.org/learn/effective-scala&#34;&gt;Effective Programming in Scala&lt;/a&gt; on Coursera, and ran into build import errors in the very first assignment (fireworks).</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -96,7 +186,7 @@
     <id>urn:uuid:321f0aca-5212-4b8b-8994-946cac15316f</id>
     <title>Effective Scala, part 2 - domain modelling</title>
     <link href="/2024/effective-scala-2-domain-modelling"></link>
-    <published>2024-04-16</published>
+    <published></published>
     <summary>Finding the &lt;em&gt;right&lt;/em&gt; level of abstraction is more important than the best level of abstraction.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -106,7 +196,7 @@
     <id>urn:uuid:7baad03d-26bd-44b2-a645-36b00f7707a1</id>
     <title>Effective Scala, part 1 - elements of a program</title>
     <link href="/2024/effective-scala-1-elements-of-a-program"></link>
-    <published>2024-04-15</published>
+    <published></published>
     <summary>A value is the representation of some entity that can be manipulated by a program.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -116,7 +206,7 @@
     <id>urn:uuid:6ac9fa5c-7838-41ef-ad83-d460315fa18c</id>
     <title>An overview of OCaml editor tooling</title>
     <link href="/2024/editor-tooling-in-ocaml"></link>
-    <published>2024-04-15</published>
+    <published></published>
     <summary>For a small community, OCaml ecosystem is quite rich, maybe too rich, in editor tooling.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -126,7 +216,7 @@
     <id>urn:uuid:aa8b98ca-36f9-4a95-9b18-2b8a75335e17</id>
     <title>Memorising branch order in git rebase</title>
     <link href="/2024/memorising-git-rebase"></link>
-    <published>2024-03-05</published>
+    <published></published>
     <summary>In a &lt;code&gt;git rebase x&lt;/code&gt; command, is &lt;code&gt;x&lt;/code&gt; being rebased on the current branch, or vice versa?</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -136,7 +226,7 @@
     <id>urn:uuid:972047d6-1709-42ab-b18e-fa68f6a760b5</id>
     <title>&lt;del&gt;I switched to fish shell&lt;/del&gt; Nope. Back to bash.</title>
     <link href="/2024/switching-to-fish-shell"></link>
-    <published>2024-02-06</published>
+    <published></published>
     <summary>I have come crawling back to bash. Why?</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -146,7 +236,7 @@
     <id>urn:uuid:e5759f6b-3be5-4219-aad2-35e9d8c1ebe2</id>
     <title>Make an opam local switch and &lt;code&gt;dune init project&lt;/code&gt; work together</title>
     <link href="/2023/opam-local-switch-and-dune-init-project"></link>
-    <published>2023-12-03</published>
+    <published></published>
     <summary>In the OCaml ecosystem, opam is the most popular package management tool, while dune is the foremost build tool.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -156,7 +246,7 @@
     <id>urn:uuid:6e7ebece-1f47-4461-b284-a0094aacf55e</id>
     <title>Spoonfeeding machine architecture to OCaml toolchain on Apple Silicon</title>
     <link href="/2023/fixing-ocaml-compiler-build-on-apple-silicon"></link>
-    <published>2023-12-01</published>
+    <published></published>
     <summary>OCaml compiler failed to build on my M1 Macbook with Apple&#39;s Silicon architecture.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -166,8 +256,8 @@
     <id>urn:uuid:bea230bc-0afb-47ac-b73e-631dc8691602</id>
     <title>List of movies better than their book counterparts</title>
     <link href="/2023/movie-is-better-than-book"></link>
-    <published>2023-10-09</published>
-    <summary>This list will likely remain short.</summary>
+    <published></published>
+    <summary>This list will likely (hopefully) remain short.</summary>
     <author>
       <name>Jayesh Bhoot</name>
     </author>
@@ -176,7 +266,7 @@
     <id>urn:uuid:de454181-6576-46c5-9017-afffb721ff58</id>
     <title>An elegant triplet of fonts</title>
     <link href="/2023/an-elegant-triplet-of-fonts"></link>
-    <published>2023-06-12</published>
+    <published></published>
     <summary>I use the following set of fonts.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -186,7 +276,7 @@
     <id>urn:uuid:83afeb98-3ab6-4a2c-a1ea-4601afc53dfb</id>
     <title>How to mark up a code snippet in HTML</title>
     <link href="/2022/how-to-mark-up-a-code-snippet-in-html"></link>
-    <published>2022-10-06</published>
+    <published></published>
     <summary>Suppose, we want to mark up the following multi-line snippet of JavaScript code:</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -196,7 +286,7 @@
     <id>urn:uuid:8a234ceb-901a-4448-8826-a5e49716c251</id>
     <title>Location of emacs config</title>
     <link href="/2022/location-of-emacs-config"></link>
-    <published>2022-09-24</published>
+    <published></published>
     <summary>If &lt;code&gt;~/.emacs.d&lt;/code&gt; exists in the system, which always does because emacs auto-creates it, then emacs does not&#xA;pick up &lt;code&gt;init.el&lt;/code&gt; from &lt;code&gt;~/.config/emacs&lt;/code&gt; for some reason...even if &lt;code&gt;~/.emacs.d&lt;/code&gt; is&#xA;empty.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -206,7 +296,7 @@
     <id>urn:uuid:6994c8c5-8f5e-4efa-819f-99310767bea1</id>
     <title>Learnings on DNS</title>
     <link href="/2022/dns"></link>
-    <published>2022-09-19</published>
+    <published></published>
     <summary>Syntax of a DNS record, along with examples:</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -216,7 +306,7 @@
     <id>urn:uuid:49f2ccac-8123-4080-af1c-cd47e7201a75</id>
     <title>What &lt;code&gt;box-sizing&lt;/code&gt; does</title>
     <link href="/2022/box-sizing"></link>
-    <published>2022-09-17</published>
+    <published></published>
     <summary>&lt;code&gt;box-sizing&lt;/code&gt; specifies the part of an element&#39;s CSS box, to which the properties &lt;code&gt;width, min-width,&#xA;max-width,&#xA;height, min-height, max-height&lt;/code&gt; apply.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -226,7 +316,7 @@
     <id>urn:uuid:913be558-883b-446e-ae0d-6b3cf5d18275</id>
     <title>Fake SHA256 in a Nix derivation</title>
     <link href="/2022/fake-sha256-in-a-nix-derivation"></link>
-    <published>2022-09-09</published>
+    <published></published>
     <summary>Discovering the SHA256 hash for a derivation is a chore.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -236,7 +326,7 @@
     <id>urn:uuid:5e88869a-3274-4b58-9065-8ffcf0dabab7</id>
     <title>How to use &lt;i&gt;Hover Click&lt;/i&gt; without animation in GNOME</title>
     <link href="/2020/hover-to-click-without-animation-in-gnome"></link>
-    <published>2020-07-05</published>
+    <published></published>
     <summary>Desktop systems usually provide an accessibility feature, with which a user only has to hover the cursor&#xA;over where he wants to click. The click goes off automatically. In GNOME, this feature is called &lt;i&gt;Hover&#xA;Click&lt;/i&gt;.</summary>
     <author>
       <name>Jayesh Bhoot</name>
@@ -246,7 +336,7 @@
     <id>urn:uuid:5f447c9e-6f5d-4cfd-98e8-e917b0429afd</id>
     <title>How to write a Firefox add-on in ClojureScript</title>
     <link href="/2020/firefox-add-on-with-clojurescript"></link>
-    <published>2020-07-04</published>
+    <published></published>
     <summary>I found writing Firefox add-ons to be a good way to learn the ropes in ClojureScript in a productive manner.</summary>
     <author>
       <name>Jayesh Bhoot</name>
