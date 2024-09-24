@@ -79,14 +79,15 @@ let make_feed xml_entries =
        xml_entries)
 
 let () =
-  let input_file_path = Filename.concat Filename.current_dir_name "input.json" in
+  let input_file_path = Filename.concat Filename.current_dir_name "input2.json" in
   let json_str = read_file input_file_path in
   let feed =
     json_str |> Yojson.Basic.from_string |> Yojson.Basic.Util.to_list
     |> keep_relevant_entries |> List.map parse_json_entry
     |> List.map to_entry_xml |> make_feed
   in
-  let output_file_path = Filename.concat Filename.current_dir_name "atom-ocaml.xml" in
+  let output_dir = Filename.concat Filename.current_dir_name "outputs" in
+  let output_file_path = Filename.concat output_dir "atom-ocaml.xml" in
   let feed_string = Pure_html.to_xml feed in
   write_to_file output_file_path feed_string;
   print_endline "Done"

@@ -63,7 +63,7 @@ func (e JsonEntry) toXmlEntry() XmlEntry {
 func main() {
 	dir, err := os.Getwd()
 	cantErr(err)
-	var inputFile = filepath.Join(dir, "input.json")
+	var inputFile = filepath.Join(dir, "input2.json")
 
 	b, err := os.ReadFile(inputFile)
 	cantErr(err)
@@ -88,7 +88,7 @@ func main() {
 	xmlB, err := xml.MarshalIndent(feed, "", "  ")
 	cantErr(err)
 	xmlDoc := slices.Concat([]byte(xml.Header), xmlB)
-	os.WriteFile("atom-go.xml", xmlDoc, 0666)
+	os.WriteFile("./outputs/atom-go.xml", xmlDoc, 0666)
 
 	fmt.Println("Done")
 }

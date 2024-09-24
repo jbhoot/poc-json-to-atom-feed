@@ -83,4 +83,4 @@ val entries = json.arr.toList
   .filter(e => !exclude.contains(e("url").str))
   .map(parseFromJson)
 
-os.write.over(os.pwd / "atom-scala.xml", makeFeed(entries))
+os.write.over(os.pwd / "outputs" / "atom-scala.xml", makeFeed(entries))

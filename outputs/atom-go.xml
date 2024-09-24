@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>All articles</title>
+  <link href="https://bhoot.dev/articles"></link>
+  <entry>
+    <id>urn:uuid:4a3058d8-0c53-4aaa-ad99-daf4254eac48</id>
+    <title>British v/s American comedy dramas</title>
+    <link href="/2024/british-vs-american-comedy-drama"></link>
+    <published>2024-07-07</published>
+    <summary>They always felt different from each other, but I could never quite put a finger on the difference.</summary>
+    <author>
+      <name>Jayesh Bhoot</name>
+    </author>
+  </entry>
+</feed>
